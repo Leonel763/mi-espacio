@@ -20,7 +20,8 @@ export function ProfileAvatar({name,url,size='md'}:{name:string;url?:string|null
 export default function ProfileSettings({sb,user,current,onClose,onSaved}:{sb:SupabaseClient;user:User;current:Profile|null;onClose:()=>void;onSaved:(p:Profile)=>void}){
  const [name,setName]=useState(current?.display_name||''),[bio,setBio]=useState(current?.bio||''),[avatar,setAvatar]=useState<string|null>(null),[upload,setUpload]=useState<File|null>(null),[busy,setBusy]=useState(false),[error,setError]=useState(''),[success,setSuccess]=useState('');
  useEffect(()=>{let active=true;void profilePhoto(sb,current?.avatar_path||null).then(u=>{if(active)setAvatar(u)});return()=>{active=false}},[sb,current?.avatar_path]);
- const preview=upload?URL.createObjectURL(upload):avatar;
+ const [preview,setPreview]=useState<string|null>(null);
+ useEffect(()=>{if(!upload){setPreview(avatar);return}const url=URL.createObjectURL(upload);setPreview(url);return()=>URL.revokeObjectURL(url)},[upload,avatar]);
  async function save(e:FormEvent){
   e.preventDefault();setError('');setSuccess('');setBusy(true);
   try{

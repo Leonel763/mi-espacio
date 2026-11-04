@@ -1,7 +1,7 @@
 'use client';
 import {useCallback,useEffect,useMemo,useState} from 'react';
 import type {SupabaseClient} from '@supabase/supabase-js';
-import {Wallet,Plus,FileImage,History,CalendarRange,ArrowDownLeft,ArrowUpRight,CheckCircle2,XCircle,Clock3,PenLine,Trash2,RefreshCw} from 'lucide-react';
+import {Plus,FileImage,History,CalendarRange,ArrowDownLeft,ArrowUpRight,CheckCircle2,XCircle,Clock3,PenLine,Trash2,RefreshCw} from 'lucide-react';
 import type {FinanceAudit,FinanceMember,FinanceRecord,FinanceRequest,FinanceSkip,FinanceVote} from '@/lib/finance-types';
 import {money,dateLabel,errorText} from '@/lib/finance-types';
 import FinanceForm from './finance-form';

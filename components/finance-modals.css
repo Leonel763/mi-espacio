@@ -1,1 +1,15 @@
 .finance-overlay{position:fixed;inset:0;z-index:110;background:rgba(0,0,0,.55);display:grid;place-items:center;padding:15px}.finance-dialog{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px;width:min(540px,100%);max-height:90vh;overflow:auto}.finance-dialog-head{display:flex;justify-content:space-between}.finance-dialog-head button{background:none;border:0;font-size:24px}.finance-form{display:grid;gap:14px}.finance-form label{display:grid;gap:6px;font-size:12px}.finance-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.finance-form input,.finance-form select,.finance-form textarea{padding:11px;background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:8px;width:100%}.finance-form-actions,.fin-vote{display:flex;gap:10px;justify-content:flex-end}.finance-distribution{padding:12px;border:1px solid var(--line);border-radius:9px;display:grid;gap:8px}.finance-distribution div{display:flex;justify-content:space-between}.fin-request{padding:15px 0;border-top:1px solid var(--line);display:grid;gap:8px}.fin-request-status{padding:5px 8px;color:var(--accent);background:var(--accent-weak);border-radius:6px}.fin-request>div:first-child{display:flex;justify-content:space-between}.fin-request p,.fin-proposal{font-size:12px;overflow-wrap:anywhere}
+
+@media(max-width:600px){
+ .finance-overlay{padding:0;align-items:end}
+ .finance-dialog{width:100%;max-height:100dvh;border-radius:20px 20px 0 0;padding:20px 16px calc(24px + env(safe-area-inset-bottom));overscroll-behavior:contain}
+ .finance-dialog-head{align-items:center;gap:10px}
+ .finance-dialog-head button{width:44px;height:44px;flex-shrink:0}
+ .finance-form-grid{grid-template-columns:minmax(0,1fr)}
+ .finance-form input,.finance-form select,.finance-form textarea{font-size:16px;min-height:44px}
+ .finance-form-actions,.fin-vote{flex-wrap:wrap}
+ .finance-form-actions button,.fin-vote button{flex:1;min-width:115px;min-height:44px}
+ .fin-request>div:first-child{flex-wrap:wrap;gap:8px}
+ .finance-distribution div{gap:12px}
+ .finance-distribution div>*{min-width:0;overflow-wrap:anywhere}
+}

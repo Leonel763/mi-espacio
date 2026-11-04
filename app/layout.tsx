@@ -1,3 +1,4 @@
+import '../components/profile-settings.css';
 import '../components/finance-base.css';
 import '../components/finance-modals.css';
 import type { Metadata } from 'next';
